@@ -147,10 +147,18 @@ exports.resetPasswordRequest = async (req, res) => {
     await user.save();
 
     // Also set token in email
+    // const resetPageLink =
+    //   'http://localhost:3000/reset-password?token=' + token + '&email=' + email;
+    // const subject = 'reset password for e-commerce';
+    // const html = `<p>Click <a href='${resetPageLink}'>here</a> to Reset Password</p>`;
+
+
     const resetPageLink =
-      'http://localhost:3000/reset-password?token=' + token + '&email=' + email;
-    const subject = 'reset password for e-commerce';
+      'https://ecommerce-git-main-brijesh-guptas-projects-c469583a.vercel.app/reset-password?token=' + token + '&email=' + email;
+
+    const subject = 'Reset Password for E-commerce';
     const html = `<p>Click <a href='${resetPageLink}'>here</a> to Reset Password</p>`;
+
 
     // lets send email and a token in the mail body so we can verify that user has clicked right link
 
